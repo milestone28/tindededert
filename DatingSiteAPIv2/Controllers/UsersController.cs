@@ -36,6 +36,7 @@ namespace DatingSiteAPIv2.Controllers
 
         // GET: api/Users
        // [AllowAnonymous]
+       //[Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<MemberDto>>> GetUsers([FromQuery] UserParams usersParams)
         {
@@ -59,7 +60,8 @@ namespace DatingSiteAPIv2.Controllers
         }
 
         // GET: api/Users/5
-       // [Authorize]
+        // [Authorize]
+        //[Authorize(Roles = "Member")]
         [HttpGet("{username}", Name = "GetUser")]
         public async Task<ActionResult<MemberDto>> GetUser(string username)
         {

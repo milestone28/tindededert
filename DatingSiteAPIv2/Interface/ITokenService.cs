@@ -8,6 +8,6 @@ namespace DatingSiteAPIv2.Interface
 {
    public interface ITokenService
     {
-        string CreatToken(AppUser user);
+      Task  <string> CreatToken(AppUser user);
     }
 }
